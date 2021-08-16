@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         updateTotalCosts();
     });
     
-    document.getElementById("platiniumradio").addEventListener("change", function(){
+    document.getElementById("premiumradio").addEventListener("change", function(){
         comissionPercentage = 0.07;
         updateTotalCosts();
     });
