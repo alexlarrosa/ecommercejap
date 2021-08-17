@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("sendBTN").onclick= function(e){
-        window.location.href="Home.html";
+        window.location.href="home.html";
         
     }
 
