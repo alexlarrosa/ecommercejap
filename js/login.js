@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         if(userField.value == "" || passField.value == "" ){
             completField = false;
-            alert("Ingresa los datos para continuar")
+            alert("Ingresa los datos para continuar");
         }else{
             window.location.href="home.html";
         }
