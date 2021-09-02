@@ -13,6 +13,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
   </head>
+  <style>
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -21,11 +31,58 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <h5 id="user"></h5>
       </div>
     </nav>
+    <div class="container border">
+      <!-- Filtros y orden de productos-->
+      <div class="row border">
+  
+        <div class="w-100 ">
+  
+          <h3 class="main-title">Ordenar productos</h3>
+  
+        </div>
+  
+        <div class="col">
+  
+          <h5 class="subtitle">Por precio</h5>
+  
+          <button id="costAsc" class="m-3 form-control btn btn-secondary">Precio ascendente</button>
+  
+          <button id="costDesc" class="m-3 form-control btn btn-secondary">Precio descendente</button>
+  
+        </div>
+  
+        <div class="col">
+  
+          <h5 class="subtitle">Por relevancia</h5>
+          <button id="relDesc" class="m-3 form-control btn btn-secondary">Relevancia descendente</button>
+        </div>
+  
+        <div class="col">
+  
+          <div id="filtro-rango-precio">
+  
+            <h5 class="subtitle">Por rango de precios</h5>
+  
+            <input type="number" class="m-3 form-control" placeholder="Mínimo" id="min"><br>
+  
+            <input type="number" class="m-3 form-control" placeholder="Máximo" id="max"><br>
+  
+            <button id="filtroBtn" class="m-3 btn btn-secondary">filtrar</button><button id="clean" class="m-3 btn btn-secondary">Limpiar</button>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+      <div class="row" id="listaProductos"></div>
+    </div><br>
     <div class="container p-5" id="listaDeProductos">
       
     </div>
+    
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
