@@ -146,4 +146,5 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (e.preventDefault) e.preventDefault();
             return false;
     });
+    document.getElementById("user").innerHTML = "Usuario:" + localStorage.getItem("user");
 });

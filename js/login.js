@@ -1,6 +1,8 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+
+
 document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("sendBTN").onclick= function(e){
         let userField = document.getElementById("user");
@@ -11,11 +13,16 @@ document.addEventListener("DOMContentLoaded", function(e){
             completField = false;
             alert("Ingresa los datos para continuar");
         }else{
-            window.location.href="home.html";
-        }
-        
+            window.location.href="home.html"; 
+        }if(completField){
+         localStorage.setItem("user", userField.value)
         
     }
+
      
+
+     }
+     let user = localStorage.getItem("user");
+     document.getElementById("user").innerHTML = "Usuario:" + user;
 
 });

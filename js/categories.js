@@ -133,4 +133,5 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         showCategoriesList();
     });
+    document.getElementById("user").innerHTML = "Usuario:" + localStorage.getItem("user");
 });

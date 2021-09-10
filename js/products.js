@@ -8,7 +8,7 @@ function sortProducts(criterio, array ){
     let result = [];
     
     if (criterio === PRODUCTS_ACS){
-        console.log("PRODUCTS_ACS");
+        
         result = array.sort(function (a, b ){
             if (a.cost < b.cost) {
                 return -1;
@@ -21,7 +21,7 @@ function sortProducts(criterio, array ){
             
        
     }else if(criterio === PRODUCTS_DCS){
-        console.log("PRODUCTS_DCS")
+        
         result = array.sort(function (a, b){
             if (a.cost > b.cost) {
                 return -1;
@@ -32,7 +32,7 @@ function sortProducts(criterio, array ){
               return 0;
         })
     }else if (criterio === PRODUCTS_REL_DCS) {
-        console.log("PRODUCTS_REL_DCS")
+        
         result = array.sort(function (a, b) {
           if (a.soldCount > b.soldCount) {
             return -1;
@@ -48,9 +48,7 @@ function sortProducts(criterio, array ){
 
 }
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+
 
 let url = "https://japdevdep.github.io/ecommerce-api/product/all.json";
 
@@ -93,12 +91,12 @@ document.getElementById("filtroBtn").onclick = function(e){
              let maxCost = document.getElementById("max").value;
              
         
-        filtro = array.filter(function(el){
+        filtro = array.filter(function(price){
             
-            return el.cost >= minCost && el.cost <= maxCost;
+            return price.cost >= minCost && price.cost <= maxCost;
         })
         array = filtro;
-        console.log(filtro);
+        
         productos = createHtml(filtro);
         document.getElementById("listaDeProductos").innerHTML = productos;
         
@@ -130,10 +128,13 @@ document.getElementById("filtroBtn").onclick = function(e){
                 productos = createHtml(sortProducts(PRODUCTS_REL_DCS, array));
                 document.getElementById("listaDeProductos").innerHTML = productos;
             }
+            
+     document.getElementById("user").innerHTML = "Usuario:" + localStorage.getItem("user");
+
 
 
         });
-console.log(user)
+
 
 
 

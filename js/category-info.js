@@ -42,4 +42,5 @@ document.addEventListener("DOMContentLoaded", function(e){
             showImagesGallery(category.images);
         }
     });
+    document.getElementById("user").innerHTML = "Usuario:" + localStorage.getItem("user");
 });
