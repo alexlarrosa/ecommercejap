@@ -47,10 +47,15 @@ function sortProducts(criterio, array ){
       return result;
 
 }
+function redirect(name){
+  window.location.href="product-info.html";
+  localStorage.setItem("auto", name)
+}
 
 
 
 let url = "https://japdevdep.github.io/ecommerce-api/product/all.json";
+
 
 let array = "";
 function createHtml(data){
@@ -58,18 +63,15 @@ function createHtml(data){
     for(let i = 0; i <data.length; i++){
         
         productos += `
-        
-        <div class="row">
-        <div class="col-3">
-            <img src="` + data[i].imgSrc + `" alt="` + data[i].description + `" class="img-thumbnail">
-        </div>
-        <div class="col">
-            <div class="d-flex w-100 justify-content-between">
-                <h4 class="mb-1">`+ data[i].name + " - " + data[i].currency + " " + data[i].cost +`</h4>
-                <small class="text-muted"> cantidad de vendidos ` + data[i].soldCount + ` </small>
-            </div>
-            <p class="mb-1">` + data[i].description + `</p>
-        </div>
+        <div class="col-md-3">
+        <a href="product-info.html" class="card mb-4 shadow-sm custom-card"  >
+            <img class="bd-placeholder-img card-img-top" src="` + data[i].imgSrc + `">
+            <h5 class="m-3">`+  data[i].name + " - " + data[i].currency + " " + data[i].cost  +`</h5>
+            <h6 class="m-3"> cantidad de vendidos ` + data[i].soldCount + `</h6>        
+        <div class="card-body">
+        <p class="card-text">` + data[i].description + `</p>
+    </div>
+    </a>
     </div>
 
 

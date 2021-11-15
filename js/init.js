@@ -45,4 +45,9 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   document.getElementById("user").innerHTML = "Usuario:" + localStorage.getItem("user");
+
+  document.getElementById("logOut").onclick = function(e){
+    localStorage. removeItem("user")
+    localStorage. removeItem("perfil")
+  }
 });

@@ -31,6 +31,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -40,17 +41,52 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <h5 class="py-2 d-none d-md-inline-block" id="user">Usuario: </h5>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+          <h5 class="py-2 d-none d-md-inline-block" id="user">Usuario: </h5>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" id="logOut" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container ">
+    <h2>Mi Perfil</h2>
+    <hr>
+    <br><br>
+    <div class="ImgPerfil">
+
+      <h4 class="subtitle">Imágen de perfil</h4>
+
+      <br>
+
+      <img class="imgPerfil" id="imgPerfil" width="180px" height="180px" src="img/imgPerfil.jpg" alt="">
+
+      <br><br>
+
+      <input type="text" class="form-control" id="imgUrl" placeholder="URL para la imágen de perfil" type="text">
+
     </div>
+    <br>
+    <h4>Nombres</h4>
+    <input class="form-control" type="text" value="" name="" id="name">
+    <br>
+    <h4>Apellidos</h4>
+    <input class="form-control" type="text" value="" name="" id="surname">
+    <br>
+    <h4>Edad</h4>
+    <input class="form-control" type="text" value="" name="" id="age">
+    <br>
+    <h4>E-mail</h4>
+    <input class="form-control" type="text" value="" name="" id="mail">
+    <br>
+    <h4>Teléfono de contacto</h4>
+    <input class="form-control" type="text" value="" name="" id="number">
+    <br><br>
+    <button type="button" class="btn btn-success" id="btnGuardar">Guardar datos</button>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">
